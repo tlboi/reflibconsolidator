@@ -1,8 +1,8 @@
-# Reference Library Consolidator
+# 📚 Reference Library Consolidator
 
-If you're an academic, you must have experienced the frustration of an incomplete reference library on EndNote, Mendeley, or BibTeX. This handy script can read .txt and .bib libraries and consolidates them by retrieving as much information as possible from the web. 
+If you're an academic, you must have experienced the frustration of an incomplete reference library on EndNote, Mendeley, or BibTeX. This handy script can read `.txt` and `.bib` libraries and consolidates them by retrieving as much information as possible from the web. 
 
-## Overview
+## 🧭 Overview
 
 This Python script automates the process of cleaning, consolidating, and enriching reference library files. It can handle libraries exported from EndNote (`.txt` format) or standard BibTeX (`.bib`) files.
 
@@ -20,7 +20,7 @@ The script aims to:
 6.  **Output** the consolidated and enriched library in the **same format** as the input file (`.txt` or `.bib`).
 7.  **Report** a summary of the initial state, fetching success/failure rates, and the final state of the library.
 
-## Features
+## ⚙️ Features
 
 *   **Input Formats:** EndNote `.txt` (simple format) and BibTeX `.bib`.
 *   **Output Formats:** Matches input format (`.txt` or `.bib`).
@@ -33,7 +33,7 @@ The script aims to:
 *   **Reporting:** Summarizes fetching results and library state.
 *   **NCBI API Key Support:** Can utilize an NCBI API key (via argument) to potentially increase request limits (adjusts internal delays).
 
-## Requirements
+## 📦 Requirements
 
 *   Python 3.8+
 *   Required Libraries:
@@ -45,19 +45,19 @@ The script aims to:
     *   `tqdm`: For displaying a progress bar during fetching.
 
 Install dependencies using pip:
-
+```bash
 pip install aiohttp lxml beautifulsoup4 bibtexparser tqdm
-
+```
 (If you don't need the progress bar, you can omit tqdm)
 
-## Usage
+## 🚀 Usage
 
 The script is run from the command line.
 
 **Basic Syntax:**
-
+```bash
 python consolidate_references.py <input_file> --email <your_email> [options]
-
+```
 **Required Arguments:**
 
 *   `input_file`: Path to your input reference library file (must end in `.txt` or `.bib`).
@@ -96,7 +96,7 @@ python consolidate_references.py <input_file> --email <your_email> [options]
 6.  **Adjust Concurrency:**
     python consolidate_references.py my_library.bib --email user@example.com --concurrency 3
 
-## How it Works Internally
+## 🧠 How it Works Internally
 
 1.  **Detect Format:** Determines if the input is `.txt` or `.bib`.
 2.  **Check for Previous Output:** Looks for a file named `<input_basename>_consolidated.<ext>`. If found and `--force-refetch` is not used, it loads this file for iterative processing. Otherwise, it loads the original input file.
@@ -112,7 +112,7 @@ python consolidate_references.py <input_file> --email <your_email> [options]
 5.  **Generate Output:** The final list of enriched dictionaries is converted back into the original input format (`.txt` or `.bib`) using `generate_endnote_text` or `generate_bibtex`.
 6.  **Report:** A summary comparing the initial number of missing items to the final number is printed to the console.
 
-## Important Notes
+## ⚠️ Important Notes
 
 *   **Email Address:** Providing a valid email address via `--email` or by editing the script is essential for API politeness.
 *   **Rate Limits:** Be mindful of API rate limits, especially for NCBI without an API key. If you see many 429 errors, reduce concurrency (`--concurrency`) and/or increase the `BASE_DOMAIN_DELAYS` values in the script. Getting an NCBI API key is the best solution.
