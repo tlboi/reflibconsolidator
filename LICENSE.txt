@@ -1,0 +1,16 @@
+Copyright © 2025 Thierry Ludovic Boissière
+
+This software and all accompanying files are provided for **personal, educational, and non-commercial use only**.
+
+You may:
+- Use, study, and modify this software for non-commercial purposes
+- Share unmodified copies of the code for non-commercial use, with attribution
+
+You may NOT:
+- Use this software for any commercial purpose, including but not limited to services, websites, data collection, product development, or consulting
+- Redistribute modified versions without written permission
+- Sell, license, sublicense, or include this code in commercial offerings
+
+All rights are reserved by the author. For commercial licensing, please contact: thierry.l.boissiere@gmail.com
+
+THIS SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND.
